@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 import { HamburguerMenu } from '../../../components/shared/HamburguerMenu'
+import { IonIcon } from '../../../components/shared/IonIcon'
 
 export const Tab1Screen = () => {
   
@@ -8,6 +9,7 @@ export const Tab1Screen = () => {
     <View>
       <HamburguerMenu />
       <Text>Tab1Screen</Text>
+      <IonIcon name='rocket-outline' color='blue' size={55} />
     </View>
   )
 }

@@ -6,6 +6,7 @@ import { globalColors } from '../../theme/theme';
 import { Text } from 'react-native';
 import { TopTabsNavigator } from './TopTabsNavigator';
 import { StackNavigator } from './StackNavigator';
+import { IonIcon } from '../../components/shared/IonIcon';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,7 +19,8 @@ export const BottomTabNavigator = () => {
       screenOptions= {{
         // headerShown: false,
         tabBarLabelStyle: {
-          marginBottom: 5
+          marginBottom: 5,
+          alignContent: 'flex-end'
         },
         headerStyle: {
           elevation: 0,
@@ -31,8 +33,8 @@ export const BottomTabNavigator = () => {
         }
       }}
     >
-      <Tab.Screen name="Tab1" options={{ title:'Tab 1', tabBarIcon: ({ color }) => (<Text style={{ color }}>Tab1</Text>) }} component={Tab1Screen} />
-      <Tab.Screen name="Tab2" options={{ title:'Tab 2', tabBarIcon: ({ color }) => (<Text style={{ color }}>Tab2</Text>) }} component={TopTabsNavigator} />
+      <Tab.Screen name="Tab1" options={{ title:'Tab 1', tabBarIcon: () => (<IonIcon name='diamond-sharp' color='red' size={25} />) }} component={Tab1Screen} />
+      <Tab.Screen name="Tab2" options={{ title:'Tab 2', tabBarIcon: () => ( <IonIcon name='bug-sharp' color='green' size={25} />) }} component={TopTabsNavigator} />
       <Tab.Screen name="Tab3" options={{ title:'Tab 3', tabBarIcon: ({ color }) => (<Text style={{ color }}>Stack</Text>) }} component={StackNavigator} />
     </Tab.Navigator>
   );
